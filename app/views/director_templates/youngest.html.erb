@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Target: MSM Queries</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+
+  <body>
+
+    <h1>Youngest director</h1>
+
+    <% if @the_youngest_director %>
+      <p>The youngest director in our dataset right now is <a href="/directors/<%= @the_youngest_director.id %>"><%= @the_youngest_director.name %></a>, born on <%= @the_youngest_director.dob.strftime("%B %d, %Y") %>.</p>
+    <% else %>
+      <p>No youngest director found.</p>
+    <% end %>
+
+    <p>(<a href="http://strftime.net/" target="_blank">http://strftime.net/</a> is handy for putting together the formatting strings for the <code>.strftime</code> method.)</p>
+  </body>
+</html>
